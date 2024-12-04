@@ -1,0 +1,104 @@
+/* header.css */
+.navbar {
+  padding: 0.5rem 1rem; 
+  
+}
+
+.custom-navbar{
+  background-color:#017BFE !important
+}
+
+.nav-item {
+  margin: 0.5rem 0; /* Space out nav items */
+}
+
+
+.nav-link {
+  position: relative;
+  text-decoration: none;
+  color: rgb(63, 216, 129) ;
+  font-weight: 400;
+  font-size: 20px;
+  
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px; 
+  height: 2px; 
+  background-color: #0f0f10; 
+  transform: scaleX(0); 
+  transition: transform 0.3s ease; 
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1); 
+}
+
+
+.user-links {
+  margin-left: auto;
+}
+
+.user-links .nav-item {
+  margin: 0; 
+}
+
+.create-space{
+  margin-top: 4rem;
+}
+
+
+@media (max-width: 998px ) {
+  .create-space{
+    margin-top: 7.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .create-space{
+    margin-top: 6rem;
+  }
+}
+
+@media (max-width: 467px) {
+  .create-space{
+    margin-top: 8.5rem;
+  }
+}
+
+@media (max-width: 460px) {
+  .create-space{
+    margin-top: 8.2rem;
+  }
+}
+
+@media (max-width: 430px) {
+  .create-space{
+    margin-top: 8rem;
+  }
+
+  
+}
+
+@media (max-width: 429px) {
+  .create-space{
+    margin-top: 9.5rem;
+  }
+  
+
+  
+}
+
+
+@media (max-width: 389px) {
+  .create-space{
+    margin-top: 9.9rem;
+  }
+  
+
+  
+}

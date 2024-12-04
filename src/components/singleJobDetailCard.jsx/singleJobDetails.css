@@ -1,0 +1,98 @@
+
+.single-job-container {
+    display: flex;
+    gap: 20px;
+    padding: 30px;
+    justify-content: center;
+    align-items: flex-start;
+    width: 60%;
+    margin: 0 auto;
+    border-radius: 0.8rem;
+    position: relative;
+    top: -80px;
+}
+
+.job-detail-card {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    width: 20%;
+    height: auto;
+    
+
+}
+
+.apply-button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.job-detail-info p {
+    font-size: 1rem;
+    margin: 10px 0;
+    color: #333;
+    margin-top: 1rem;
+}
+
+.job-detail-info p strong {
+    font-weight: 600;
+    color: #000;
+    margin-top: 1rem;
+}
+
+
+@media (max-width: 1000px) {
+    .single-job-container {
+        width: 90%;
+        flex-direction: column; 
+    }
+
+    .job-detail-card {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .apply-button {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    .job-detail-info p {
+        font-size: 0.95rem;
+    }
+}
+
+
+@media (max-width: 1200px) {
+    .single-job-container {
+        width: 100%; 
+        padding: 15px;
+    }
+
+    .job-detail-card {
+        width: 100%; 
+        margin: 0 auto; 
+        padding: 15px;
+    }
+
+    .apply-button {
+        font-size: 0.85rem;
+        padding: 10px;
+    }
+
+    .job-detail-info p {
+        font-size: 0.9rem;
+    }
+}

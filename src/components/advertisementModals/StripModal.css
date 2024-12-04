@@ -1,0 +1,89 @@
+.strip-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: linear-gradient(90deg, #1e0251, #3f007d);
+    color: #fff;
+    position: relative;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    font-size: 1rem;
+    max-width: 100%;
+}
+
+.strip-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.strip-icon {
+    font-size: 1.5rem;
+}
+
+.strip-sale-text {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.strip-countdown {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 1rem;
+    flex-wrap: wrap;
+}
+
+.strip-button {
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    border: 1px solid #00ff99;
+    color: #00ff99;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.strip-close-button {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.fixed-top{
+    position: fixed;
+    top: 0;
+    
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .strip-container {
+        flex-direction: column;
+        padding: 0.5rem 01rem;
+    }
+
+    .strip-sale-text {
+        font-size: 1rem;
+    }
+
+    .strip-countdown {
+        font-size: 0.875rem;
+    }
+
+    .strip-button {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.875rem;
+    }
+
+    .strip-close-button {
+        right: 0.5rem;
+        font-size: 0.875rem;
+    }
+}

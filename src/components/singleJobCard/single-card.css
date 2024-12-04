@@ -1,0 +1,169 @@
+.single-job-container {
+    display: flex;
+    gap: 20px;
+    padding: 30px;
+    justify-content: center;
+    align-items: flex-start;
+    width: 60%;
+    margin: 0 auto;
+    border-radius: 0.8rem;
+    position: relative;
+    top: -160px;
+    flex-direction: row;
+}
+
+.job-description {
+    flex: 2;
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.back-button {
+    font-size: 1rem;
+    color: #333;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.company-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.job-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #000;
+    margin: 10px 0;
+}
+
+.section-title, .subsection-title {
+    font-weight: bold;
+    margin-top: 20px;
+    color: #333;
+}
+
+.description-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666;
+}
+
+.requirements-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 10px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.social-icons {
+    display: flex;
+    gap: 0.8rem;
+    font-size: 1.8rem;
+  }
+  
+  .social-icons span {
+    display: inline-flex;
+    transition: transform 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .social-icons span:hover {
+    transform: scale(1.2); /* Slightly increases the size on hover */
+    color: #ff4757; /* Changes color on hover */
+  }
+  
+  /* Additional styling for specific icons if desired */
+  .social-icons span:hover:nth-child(1) { color: #3b5998; } /* Facebook blue */
+  .social-icons span:hover:nth-child(2) { color: #1da1f2; } /* Twitter blue */
+  .social-icons span:hover:nth-child(3) { color: #e1306c; } /* Instagram pink */
+  .social-icons span:hover:nth-child(4) { color: #ff0000; } /* YouTube red */
+  
+
+  .carousel-item {
+    transition: transform 0.3s ease-in-out !important; /* Adjust this value for desired transition speed */
+}
+
+
+@media (max-width: 768px) {
+    .single-job-container {
+        flex-direction: column;
+        width: 90%;
+        padding: 20px;
+        top: -60px;
+        gap: 15px;
+    }
+
+    .job-description {
+        padding: 20px;
+    }
+
+    .back-button {
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+    }
+
+    .company-title {
+        font-size: 1.1rem;
+    }
+
+    .job-title {
+        font-size: 1.6rem;
+    }
+
+    .section-title, .subsection-title {
+        font-size: 1rem;
+    }
+
+    .description-text {
+        font-size: 0.9rem;
+    }
+
+    .requirements-list {
+        font-size: 0.9rem;
+    }
+}
+
+
+
+@media (max-width: 480px) {
+    .single-job-container {
+        padding: 15px;
+        gap: 10px;
+        top: -50px;
+    }
+
+    .job-description {
+        padding: 15px;
+    }
+
+    .back-button {
+        font-size: 0.8rem;
+    }
+
+    .company-title {
+        font-size: 1rem;
+    }
+
+    .job-title {
+        font-size: 1.4rem;
+    }
+
+    .section-title, .subsection-title {
+        font-size: 0.9rem;
+    }
+
+    .description-text {
+        font-size: 0.85rem;
+    }
+
+    .requirements-list {
+        font-size: 0.85rem;
+    }
+}
