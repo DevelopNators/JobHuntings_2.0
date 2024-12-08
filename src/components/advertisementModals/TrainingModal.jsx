@@ -4,6 +4,7 @@ import ReactTrainig from '../../assets/reactjs.png';
 import JavaTraining from '../../assets/java-training.jpg';
 import PythonTraining from '../../assets/python-training.jpeg';
 import AndroidTraining from '../../assets/android-training.jpg';
+import { ErrorImg } from "../../utils/ErrorImageHelper";
 
 const TrainingModal = ({ show, handleClose }) => {
   return (
@@ -19,6 +20,8 @@ const TrainingModal = ({ show, handleClose }) => {
                 className="d-block w-100"
                 src={ReactTrainig}
                 alt="React Training"
+                onError={ErrorImg}
+
               />
               <Carousel.Caption>
                
@@ -30,6 +33,8 @@ const TrainingModal = ({ show, handleClose }) => {
                 className="d-block w-100"
                 src={JavaTraining}
                 alt="Java Training"
+                onError={ErrorImg}
+
               />
               <Carousel.Caption>
                
@@ -41,6 +46,8 @@ const TrainingModal = ({ show, handleClose }) => {
                 className="d-block w-100"
                 src={PythonTraining}
                 alt="Python Training"
+                onError={ErrorImg}
+
               />
               <Carousel.Caption>
                

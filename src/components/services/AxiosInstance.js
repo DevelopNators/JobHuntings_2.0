@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseURL = import.meta.env.VITE_BASE_URL;
+const baseURL = import.meta.env.VITE_BASE_URL+ "api/";
 const reqEncryption = import.meta.env.VITE_REQ_ENCRYPTION === "true";
 
 const AxiosInstance = axios.create({

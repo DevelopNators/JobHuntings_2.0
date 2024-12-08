@@ -23,7 +23,7 @@ const SingleJobDetail = ({jobRole ,salary,createdAt,applyLink,categoryId}) => {
     const formattedJobRoleDate = formatDate(createdAt);
 
     return (
-        <div className="job-detail-card">
+        <div className="job-detail-card mt-4">
             <div>
                         {applyLink ? (
                             <a

@@ -1,4 +1,3 @@
-
 // import "bootstrap/dist/css/bootstrap.min.css";
 // import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css";
@@ -33,16 +32,16 @@
 //       <Router>
 
 //         <Header></Header>
-       
+
 //         <Routes>
 //           <Route path= "/" element={<CardHolder/>} />
-          
+
 //           <Route path="/about" element={<About />} />
 //           <Route path="/singlejob/:id" element={<SingleJob/>}/>
 //           <Route path="/contact" element={<Contact/> } ></Route>
 //           <Route path ="/privacy-policy" element = {<PrivacyPolicy/> } > </Route>
 //           <Route path ="term-services" element={<TermAndService/>}  > </Route>
-          
+
 //         </Routes>
 
 //       <Footer></Footer>
@@ -53,7 +52,6 @@
 // }
 
 // export default App;
-
 
 import React, { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -73,12 +71,31 @@ import TermAndService from "./components/termServices/termServices";
 // import NavLink from "./components/navlinks/navlinks";
 import { initializeAnalytics, trackPageView } from "./analytics";
 import { useLocation } from "react-router-dom";
-
+import { RequestForToken } from "./firebase/firebase";
+import PushNotificationService from "./utils/PushNotifications";
+import { ToastContainer, toast } from "react-toastify";
+import { useDispatch } from "react-redux";
 function App() {
   useEffect(() => {
     initializeAnalytics();
   }, []);
-
+  const dispatch=useDispatch()
+  /******************************FIREBASE NOTIFIVATION********************************** */
+  useEffect(() => {
+    const initializeNotification = async () => {
+      await RequestForToken();
+    };
+    // PushNotificationService.subscribeTokenToTopic("app")
+    initializeNotification();
+    const unsubscribeForeground = PushNotificationService.startListening(
+      dispatch,
+      ""
+    );
+    return () => {
+      unsubscribeForeground();
+    };
+  }, []);
+  /************************************************************************************* */
   return (
     <Router>
       <PageTracker />
@@ -92,6 +109,7 @@ function App() {
         <Route path="/term-services" element={<TermAndService />} />
       </Routes>
       <Footer />
+      <ToastContainer />
     </Router>
   );
 }
@@ -103,7 +121,7 @@ function PageTracker() {
     trackPageView(location.pathname);
   }, [location]);
 
-  return null; 
+  return null;
 }
 
 export default App;

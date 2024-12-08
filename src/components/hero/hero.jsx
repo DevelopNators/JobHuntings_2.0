@@ -54,7 +54,7 @@ const Hero = () => {
     <>
       <div
         className="hero-section text-center text-white"
-        style={{ backgroundColor: "#007bff", padding: "200px 0" }}
+        // style={{ backgroundColor: "#007bff", padding: "200px 0" }}
       >
         <div className="container">
           <motion.h1

@@ -153,6 +153,7 @@ import LoadingComponent from '../loadinComponent/LoadingComponent';
 import { getCategoryById } from '../services/category';
 import { setPageNumber, setPageSize } from '../features/cardSlice';
 import CardPagination from '../pagination/pagination';
+import { ErrorImg } from '../../utils/ErrorImageHelper';
 
 const JobCard = () => {
   const dispatch = useDispatch();
@@ -219,6 +220,7 @@ const JobCard = () => {
                   borderRadius: '8px',
                   transition: 'transform 0.3s ease-in-out',
                 }}
+                onError={ErrorImg}
                 className="responsive-image"
               />
               <div className="d-flex justify-content-between align-items-center mt-3">

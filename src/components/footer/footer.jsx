@@ -1,13 +1,19 @@
 import React from 'react';
 import './Footer.css';
 import { Link } from 'react-router-dom';
+const logo = import.meta.env.VITE_APP_LOGO;
 
 const Footer = () => {
   return (
     <footer className="footer"style={{padding:'2rem'}}>
       <div className="footer-content">
         <div className="footer-logo">
-          <h3> Job Hunting</h3>
+        <img
+            src={logo}
+            alt="Logo"
+            className="logo-img"
+            style={{ height: "40px", width: "auto", marginRight: "8px" }}
+          />
         </div>
         <nav className="footer-nav">
 

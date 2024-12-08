@@ -28,6 +28,8 @@
   max-width: 100%;
   height: auto;
   cursor: pointer;
+  height: 2.5em;
+  width: 2.5em;
 }
 
 .nav-btn {

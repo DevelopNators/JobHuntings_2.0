@@ -5,7 +5,9 @@
 }
 
 .custom-navbar{
-  background-color:#017BFE !important
+  background-color:#017BFE !important;
+  background:transparent !important;
+  backdrop-filter: brightness(0.625);
 }
 
 .nav-item {
@@ -16,7 +18,7 @@
 .nav-link {
   position: relative;
   text-decoration: none;
-  color: rgb(63, 216, 129) ;
+  color: rgb(255, 255, 255) ;
   font-weight: 400;
   font-size: 20px;
   
@@ -49,6 +51,12 @@
 
 .create-space{
   margin-top: 4rem;
+  background: url('assets/paths.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: top;
+
 }
 
 

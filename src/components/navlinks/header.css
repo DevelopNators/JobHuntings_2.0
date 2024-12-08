@@ -36,10 +36,13 @@
   /* Hero Section */
   .hero-section {
     background-color: #4B6BFB;
+    background: transparent;
     color: white;
     padding: 50px 0;
     position: relative;
     text-align: center;
+    backdrop-filter: brightness(0.625);
+
   }
   
   .hero-section h1 {
@@ -88,4 +91,15 @@
   }
   
   
-  
+  /* Logo styling */
+.logo-img {
+  height: 40px;
+  width: auto;
+}
+
+/* Navbar brand styling for alignment */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Adjust spacing between logo and text */
+}

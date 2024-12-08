@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchData } from '../actions/cardAction';
 import LoadingComponent from '../loadinComponent/LoadingComponent';
 import { pageNumber, pageSize } from '../store/store';
+import { ErrorImg } from "../../utils/ErrorImageHelper";
 
 const Partners = () => {
   const images = [
@@ -51,6 +52,8 @@ const Partners = () => {
                 onClick={() => handleClick(img.name)}
                 title={img.name}
                 className="slider-image"
+                onError={ErrorImg}
+
               />
             </div>
           ))}
