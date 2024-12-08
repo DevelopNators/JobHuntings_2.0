@@ -1,5 +1,5 @@
 import React from "react";
-import './cardHolder.css';
+import './cardholder.css';
 import Partners from "../partners/partners";
 import JobType from "../jobtype/jobtype";
 import JobCard from "../jobcard/jobcard";
