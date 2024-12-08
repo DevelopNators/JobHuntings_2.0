@@ -4,82 +4,50 @@ const iv = "0123456789ABCDEF";
 
 const cryptoService = {
   encrypt: (data) => {
-    try {
-      const ciphertext = CryptoJS.AES.encrypt(
-        JSON.stringify(data),
-        CryptoJS.enc.Utf8.parse(key),
-        {
-          iv: CryptoJS.enc.Utf8.parse(iv),
-          padding: CryptoJS.pad.Pkcs7,
-          mode: CryptoJS.mode.CBC,
-        }
-      ).toString();
-      return ciphertext;
-    } catch (error) {
-      console.error("Encryption error:", e);
-      throw error;
-    }
+    const encryptedData = CryptoJS.AES.encrypt(JSON.stringify(data), key, {
+      iv: iv,
+      mode: CryptoJS.mode.CBC,
+      padding: CryptoJS.pad.Pkcs7,
+    }).toString();
+    return encryptedData;
   },
 
-  decrypt: (ciphertext) => {
-    try {
-      const bytes = CryptoJS.AES.decrypt(
-        ciphertext,
-        CryptoJS.enc.Utf8.parse(key),
-        {
-          iv: CryptoJS.enc.Utf8.parse(iv),
-          padding: CryptoJS.pad.Pkcs7,
-          mode: CryptoJS.mode.CBC,
-        }
-      );
-      const decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
-      return decryptedData;
-    } catch (error) {
-      console.error("Encryption error:", e);
-      throw error;
-    }
+  decrypt: (encryptedData) => {
+    const decryptedBytes = CryptoJS.AES.decrypt(encryptedData, key, {
+      iv: iv,
+      mode: CryptoJS.mode.CBC,
+      padding: CryptoJS.pad.Pkcs7,
+    });
+    const decryptedData = JSON.parse(
+      decryptedBytes.toString(CryptoJS.enc.Utf8)
+    );
+    return decryptedData;
   },
 
   encryptForUri: (data) => {
-    try {
-      const encrypted = CryptoJS.AES.encrypt(
-        data,
-        CryptoJS.enc.Utf8.parse(key),
-        {
-          iv: CryptoJS.enc.Utf8.parse(iv),
-          padding: CryptoJS.pad.Pkcs7,
-          mode: CryptoJS.mode.CBC,
-        }
-      );
-      const base64Encoded = encrypted.toString();
-      const urlEncoded = encodeURIComponent(base64Encoded).replace(/\//g, "_");
-      return urlEncoded;
-    } catch (e) {
-      console.error("Encryption error:", e);
-      throw error;
-    }
+    const encryptedData = CryptoJS.AES.encrypt(JSON.stringify(data), key, {
+      iv: iv,
+      mode: CryptoJS.mode.CBC,
+      padding: CryptoJS.pad.Pkcs7,
+    }).toString();
+    const urlEncodedData = encodeURIComponent(encryptedData).replace(
+      /\//g,
+      "_"
+    );
+    return urlEncodedData;
   },
 
-  decryptFromUri: (encryptedForUri) => {
-    try {
-      const base64Decoded = decodeURIComponent(
-        encryptedForUri.replace(/_/g, "/")
-      );
-      const decrypted = CryptoJS.AES.decrypt(
-        base64Decoded,
-        CryptoJS.enc.Utf8.parse(key),
-        {
-          iv: CryptoJS.enc.Utf8.parse(iv),
-          padding: CryptoJS.pad.Pkcs7,
-          mode: CryptoJS.mode.CBC,
-        }
-      );
-      const decryptedText = CryptoJS.enc.Utf8.stringify(decrypted);
-      return decryptedText;
-    } catch (e) {
-      console.error("Decryption error:", e);
-      throw error;
-    }
+  decryptFromUrl: (urlEncodedData) => {
+    const encryptedData = decodeURIComponent(urlEncodedData.replace(/_/g, "/"));
+    const decryptedBytes = CryptoJS.AES.decrypt(encryptedData, key, {
+      iv: iv,
+      mode: CryptoJS.mode.CBC,
+      padding: CryptoJS.pad.Pkcs7,
+    });
+    const decryptedData = JSON.parse(
+      decryptedBytes.toString(CryptoJS.enc.Utf8)
+    );
+    return decryptedData;
   },
 };
 

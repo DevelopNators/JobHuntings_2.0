@@ -4,7 +4,7 @@ import cryptoService from "./CryptoService";
 const reqEncrpytion = import.meta.env.VITE_REQ_ENCRYPTION;
 const controller = "Notification";
 
-export async function subscribeToTopics(topics) {
+export async function subscribeToTopics(topics=[]) {
   const tokenData = localStorage.getItem("fcm");
   if (!tokenData) {
     return null;

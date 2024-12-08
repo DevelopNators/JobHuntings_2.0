@@ -7,7 +7,7 @@ const LoadingComponent = () => {
     style={{ height: "50vh" }}
   >
     <div
-      class="spinner-grow"
+      className="spinner-grow"
       style={{
         width: "3rem",
         height: "3rem",

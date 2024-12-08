@@ -36,9 +36,10 @@ export const RequestForToken = async () => {
     if (currentToken) {
       console.log("current token for client: ", currentToken);
       const token = localStorage.getItem("fcm");
-      PushNotificationService.subscribeTokenToTopic("jobhuntings");
       localStorage.setItem("fcm", currentToken);
-
+      if (currentToken) {
+        PushNotificationService.subscribeTokenToTopic("jobhuntings");
+      }
       return currentToken;
     } else {
       alert(

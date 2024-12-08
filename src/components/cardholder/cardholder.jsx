@@ -28,7 +28,7 @@ const CardHolder = () => {
 
           <p className="results-count">
           {loading ? (
-            <p>Loading...</p>
+            <span>Loading...</span>
           ) : (
             <span>Job Counts: {data?.config?.recordsCount || 0}</span>
           )}

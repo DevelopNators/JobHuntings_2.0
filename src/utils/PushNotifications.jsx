@@ -24,7 +24,7 @@ const PushNotificationService = {
       throw error;
     }
   },
-  subscribeTokenToTopic(topic = null) {
+  subscribeTokenToTopic(topic) {
     const token = localStorage.getItem("fcm");
     if (!token) {
       console.error("FCM token is not available");
