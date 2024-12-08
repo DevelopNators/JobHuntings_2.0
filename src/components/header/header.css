@@ -7,7 +7,7 @@
 .custom-navbar{
   background-color:#017BFE !important;
   background:transparent !important;
-  backdrop-filter: brightness(0.625);
+  backdrop-filter: brightness(0.7);
 }
 
 .nav-item {
