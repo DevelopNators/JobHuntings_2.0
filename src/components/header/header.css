@@ -51,7 +51,7 @@
 
 .create-space{
   margin-top: 4rem;
-  background: url('assets/paths.jpg');
+  background: url('/assets/paths.png');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
