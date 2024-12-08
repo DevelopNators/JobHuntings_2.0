@@ -47,7 +47,7 @@ const PushNotificationService = {
   startListening(dispatch, decodedToken) {
     return onMessage(messaging, (payload) => {
       debugger
-      alert(payload.notification.body)
+      alert(payload.notification.body);
       toast.success(payload.notification.body + "!", {
         position: "top-center",
         autoClose: 3000,
