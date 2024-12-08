@@ -1,6 +1,6 @@
 import CryptoJS from "crypto-js";
-const key = "01234567890123456789012345678901";
-const iv = "0123456789ABCDEF";
+const key ='01234567890123456789012345678901';
+const iv = '0123456789ABCDEF';
 
 const cryptoService = {
   encrypt: (data) => {
