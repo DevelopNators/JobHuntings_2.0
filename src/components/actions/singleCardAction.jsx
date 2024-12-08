@@ -28,8 +28,7 @@ export const fetchSingleJob = createAsyncThunk(
             let data;
 
             if (reqEncryption) {
-                const serializedData = JSON.stringify(requestData);
-                data = { enData: cryptoService.encryptForUri(serializedData) };
+                data = { enData: cryptoService.encryptForUri(requestData) };
             } else {
                 data = requestData;
             }

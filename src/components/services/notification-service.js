@@ -10,9 +10,10 @@ export async function subscribeToTopics(topics=[]) {
     return null;
   }
   try {
+    debugger
     var data = cryptoService.encryptForUri({
       topics: topics,
-      token: tokenData,
+      token: tokenData
     });
     const response = await axiosInstance.get(
       `${controller}/subscribe?data=${data}`

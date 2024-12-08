@@ -2,33 +2,32 @@ import React, { useState, useEffect } from "react";
 import "./hero.css";
 import { motion } from "framer-motion";
 import { useSelector, useDispatch } from "react-redux";
-import { pageNumber, pageSize } from '../store/store';
-import { fetchData } from '../actions/cardAction';
+import { pageNumber, pageSize } from "../store/store";
+import { fetchData } from "../actions/cardAction";
 import { Link } from "react-router-dom";
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Hero = () => {
   const { data } = useSelector((state) => state.card);
   const navigate = useNavigate();
   const location = useLocation();
 
-  const jobCount = data?.config?.recordsCount || 0
+  const jobCount = data?.config?.recordsCount || 0;
   const [displayCount, setDisplayCount] = useState(0);
-  const [title, setTitle] = useState("")
+  const [title, setTitle] = useState("");
   const dispatch = useDispatch();
 
   const handleSearch = (e) => {
     e.preventDefault();
-   
-    if (location.pathname !== '/') {
-      navigate('/');
+
+    if (location.pathname !== "/") {
+      navigate("/");
     }
-   
   };
- 
+
   useEffect(() => {
     let currentCount = 0;
-    const increment = Math.ceil(jobCount / 100); 
+    const increment = Math.ceil(jobCount / 100);
 
     const interval = setInterval(() => {
       currentCount += increment;
@@ -43,12 +42,12 @@ const Hero = () => {
     return () => clearInterval(interval);
   }, [jobCount]);
 
-  const handleClick = (e) =>{
-    e.preventDefault()
-    if (title){
-      dispatch(fetchData({pageNumber, pageSize, name: title}))
+  const handleClick = (e) => {
+    e.preventDefault();
+    if (title) {
+      dispatch(fetchData({ pageNumber, pageSize, name: title }));
     }
-  }
+  };
 
   return (
     <>
@@ -80,33 +79,31 @@ const Hero = () => {
             with thousands of job postings across industries.
           </motion.p>
 
-          {
-            location.pathname == '/' ? (
-
-              <div className="input-container">
+          {location.pathname == "/" ? (
+            <div className="input-container">
               <input
-              
                 type="text"
                 className="form-control"
-                placeholder="Job Title"
+                placeholder="Jobs, Internships, Opportunities"
                 aria-label="Job Title"
-                value = {title}
-                onChange={(e)=>setTitle(e.target.value)}
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
                 onClick={handleClick}
               />
-              <button  onClick={(e) => {
-                handleClick(e);
-                handleSearch(e);
-              }}  className="search-button" type="button">
-                Search
+              <button
+                onClick={(e) => {
+                  handleClick(e);
+                  handleSearch(e);
+                }}
+                className="search-button"
+                type="button"
+              >
+                Explore
               </button>
             </div>
-
-            )
-            :""
-          }
-
-         
+          ) : (
+            ""
+          )}
 
           <div
             style={{
@@ -128,7 +125,7 @@ const Hero = () => {
                 marginBottom: "20px",
               }}
             >
-              { location.pathname == '/'?  displayCount + ' Jobs' :''} 
+              {location.pathname == "/" ? displayCount + " Jobs" : ""}
             </motion.p>
           </div>
         </div>

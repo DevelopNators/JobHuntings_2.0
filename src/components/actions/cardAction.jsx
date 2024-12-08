@@ -27,7 +27,7 @@ export const fetchData = createAsyncThunk(
       }
 
       if (reqEncryption) {
-        const encryptedData = cryptoService.encryptForUri(JSON.stringify(data));
+        const encryptedData = cryptoService.encryptForUri(data);
         data = { enData: encryptedData };
       }
 
