@@ -2,8 +2,7 @@ import CryptoJS from "crypto-js";
 const key = "01234567890123456789012345678901";
 const iv = "0123456789ABCDEF";
 
-const CryptoService = {
-
+const cryptoService = {
   encrypt: (data) => {
     try {
       const ciphertext = CryptoJS.AES.encrypt(
@@ -18,7 +17,7 @@ const CryptoService = {
       return ciphertext;
     } catch (error) {
       console.error("Encryption error:", e);
-      throw error
+      throw error;
     }
   },
 
@@ -37,7 +36,7 @@ const CryptoService = {
       return decryptedData;
     } catch (error) {
       console.error("Encryption error:", e);
-      throw error
+      throw error;
     }
   },
 
@@ -57,7 +56,7 @@ const CryptoService = {
       return urlEncoded;
     } catch (e) {
       console.error("Encryption error:", e);
-      throw error
+      throw error;
     }
   },
 
@@ -79,9 +78,9 @@ const CryptoService = {
       return decryptedText;
     } catch (e) {
       console.error("Decryption error:", e);
-      throw error
+      throw error;
     }
   },
 };
 
-export default CryptoService;
+export default cryptoService;

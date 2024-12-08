@@ -1,9 +1,8 @@
 // import { Controllers } from "../enums/Controllers";
 import axiosInstance from "./AxiosInstance";
-import CryptoService from "./CryptoService";
+import cryptoService from "./CryptoService";
 const reqEncrpytion = import.meta.env.VITE_REQ_ENCRYPTION;
 const controller = "Notification";
-
 
 export async function subscribeToTopics(topics) {
   const tokenData = localStorage.getItem("fcm");
@@ -11,7 +10,7 @@ export async function subscribeToTopics(topics) {
     return null;
   }
   try {
-    var data = CryptoService.encryptForUrl({
+    var data = cryptoService.encryptForUri({
       topics: topics,
       token: tokenData,
     });

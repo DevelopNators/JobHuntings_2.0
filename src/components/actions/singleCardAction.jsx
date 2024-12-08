@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { getJobs } from '../services/jobhunting-service';
-import CryptoService from '../services/CryptoService'; 
+import cryptoService from '../services/CryptoService';
 // import { pageNumber } from '../store/store';
 // import  {pageSize}  from  '../store/store';
 export const fetchSingleJob = createAsyncThunk(
@@ -29,7 +29,7 @@ export const fetchSingleJob = createAsyncThunk(
 
             if (reqEncryption) {
                 const serializedData = JSON.stringify(requestData);
-                data = { enData: CryptoService.encryptForUri(serializedData) };
+                data = { enData: cryptoService.encryptForUri(serializedData) };
             } else {
                 data = requestData;
             }
