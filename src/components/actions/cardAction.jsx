@@ -1,7 +1,7 @@
 // cardActions.js
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { getJobs } from "../services/jobhunting-service";
-import cryptoService from "../services/CryptoService";
+import cryptoService from "../services/CryptoService.js";
 
 export const fetchData = createAsyncThunk(
   "card/fetchData",
