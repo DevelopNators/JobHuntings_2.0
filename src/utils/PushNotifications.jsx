@@ -26,6 +26,7 @@ const PushNotificationService = {
   },
   subscribeTokenToTopic(topic) {
     const token = localStorage.getItem("fcm");
+    
     if (!token) {
       console.error("FCM token is not available");
       return;
@@ -46,11 +47,9 @@ const PushNotificationService = {
 
   startListening(dispatch, decodedToken) {
     return onMessage(messaging, (payload) => {
-      debugger
-      alert(payload.notification.body);
       toast.success(payload.notification.body + "!", {
         position: "top-center",
-        autoClose: 3000,
+        autoClose: 5000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
